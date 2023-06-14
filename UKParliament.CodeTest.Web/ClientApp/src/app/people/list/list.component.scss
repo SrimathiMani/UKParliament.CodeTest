@@ -1,0 +1,77 @@
+
+.peopleList-table {
+  table-layout: fixed;
+  max-height:350px;
+}
+
+h3{
+    font-weight:bold;
+}
+
+.table-container {
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 1vh;
+}
+
+/*mat-cell{
+    border-block: dashed;
+}*/
+
+.mat-paginator {
+  display: block;
+  background: #fff;
+}
+
+.mat-paginator, .mat-paginator-page-size .mat-select-trigger {
+  font-family: Roboto,Helvetica Neue,sans-serif;
+  font-size: 12px;
+  color: #0000008a;
+  font-family: Roboto,Helvetica Neue,sans-serif;
+  font-size: 12px;
+}
+
+
+.mat-column-title {
+  /*width: 15% !important;*/
+  flex: 0 0 10% !important;
+}
+
+.mat-column-firstName {
+  /*width: 43% !important;*/
+  flex: 0 0 20% !important;
+}
+
+.mat-column-lastName {
+  /*width: 10% !important;*/
+  flex: 0 0 20% !important;
+}
+
+.mat-column-dateOfBirth {
+  /*width: 15% !important;*/
+  flex: 0 0 20% !important;
+}
+
+.mat-column-gender {
+  /*width: 15% !important;*/
+  flex: 0 0 10% !important;
+}
+
+.mat-column-isEdit {
+  /*width: 12% !important;*/
+  flex: 0 0 20% !important;
+  /*padding-left: 25px;*/
+}
+
+.mat-cell div, .mat-cell div mat-form-field {
+  width: 98% !important;
+}
+
+/*.mat-no-data-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding-top: 20px;
+}*/

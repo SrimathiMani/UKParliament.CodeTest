@@ -1,0 +1,53 @@
+
+<h3>List of People</h3>
+<div>
+  <div class="table-container">
+    <mat-table #table [dataSource]="dataSource" class="border mat-elevation-z8 peopleList-table" style="float:left; width:100%">
+
+      <ng-container *ngFor="let col of columnsSchema; let i = index" matColumnDef="{{ col.key }}">
+        <mat-header-cell *matHeaderCellDef>
+          {{ col.label }}
+        </mat-header-cell>
+
+        <mat-cell *matCellDef="let element">
+
+          <div [ngSwitch]="col.type" *ngIf="!element.isEdit">
+            <div class="btn-edit" *ngSwitchCase="'isEdit'">
+              <button title="Edit Person" mat-icon-button class="material-icons save-button mat-icon-button mat-primary pt-3" matTooltip="Edit Row" (click)="editPerson(element.id || 0)">
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button title="Delete Person" mat-icon-button class="material-icons delete-button mat-icon-button mat-warn" (click)="deletePerson(element.id || 0)"
+                      matTooltip="Delete Row">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+            </div>
+
+            <span *ngSwitchCase="'date'">
+              {{ element[col.key] | date: 'dd/MM/yyyy'}}
+            </span>
+            <span *ngSwitchDefault>
+              {{ element[col.key] }}
+            </span>
+          </div>
+
+
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true;"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+  </div>
+
+  <mat-paginator #paginator
+                 [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons></mat-paginator>
+
+  <div *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center; background: white;">
+    <mat-progress-spinner color="primary" mode="indeterminate">
+    </mat-progress-spinner>
+  </div>
+</div>

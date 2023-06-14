@@ -1,0 +1,26 @@
+
+<section>
+
+  <div class="container-fluid px-0 pt-3">
+    <h1>Manage People App</h1>
+
+    <button title="Add new person" (click)="addPerson()" class="btn btn-sm btn-success mb-2 mt-3">Add People</button>
+    <div class="row g-0 mx-auto mt-4">
+
+      <!-- First column -->
+      <div class="col-lg-6 vh-100 text-right">
+        <app-list [peopleList]="peopleList" [changing]="changingValue" (delete)="deletePerson($event)" (edit)="editPerson($event)"></app-list>
+      </div>
+      <!-- First column -->
+      <div class="col-lg-1 vh-100">
+      </div>
+      <!-- Second column -->
+      <div class="col-lg-5 vh-100 pl-5">
+        <app-add-edit *ngIf="showAddEditForm" [id]="updateId" (save)="savePeople($event)" (cancel)="closeAddEditForm($event)"></app-add-edit>
+      </div>
+      <!-- Second column -->
+
+    </div>
+  </div>
+
+</section>
