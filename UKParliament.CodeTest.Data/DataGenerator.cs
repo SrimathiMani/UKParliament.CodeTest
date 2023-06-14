@@ -59,7 +59,7 @@ namespace UKParliament.CodeTest.Data
                     },
                     new Person
                     {
-                        Title = "Ms",
+                        Title = "Mr",
                         FirstName = "Roger",
                         LastName = "Federer",
                         DateOfBirth = DateOnly.Parse("25/12/2005"),
