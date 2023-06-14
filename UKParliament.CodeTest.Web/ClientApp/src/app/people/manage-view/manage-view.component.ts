@@ -82,7 +82,15 @@ export class ManageViewComponent implements OnInit {
     //const person = this.peopleList!.find(x => x.id === id);
     this.personService.delete(id)
       .pipe(first())
-      .subscribe(() => this.peopleList = this.peopleList!.filter(x => x.id !== id));
+      .subscribe(() => {
+        this.peopleList = this.peopleList!.filter(x => x.id !== id)
+
+        //if update editor is open for this deleted row, then cancel the editor
+        if (id == this.updateId) {
+          this.showAddEditForm = false;
+          this.updateId = '';
+        }
+      });
   }
 
   //cancel(hide) add/edit component
