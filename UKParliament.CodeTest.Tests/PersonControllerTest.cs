@@ -18,7 +18,6 @@ namespace UKParliament.CodeTest.Tests
         {
             var options = new DbContextOptionsBuilder<PersonManagerContext>()
             .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-            //.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
             .Options;
 
             _context = new PersonManagerContext(options);
@@ -271,7 +270,7 @@ namespace UKParliament.CodeTest.Tests
                 },
                 new Person
                 {
-                        Id = 4,
+                    Id = 4,
                     Title = "Ms",
                     FirstName = "Sarah",
                     LastName = "Ellis",
@@ -280,7 +279,7 @@ namespace UKParliament.CodeTest.Tests
                 },
                 new Person
                 {
-                     Id = 5,
+                    Id = 5,
                     Title = "Ms",
                     FirstName = "Roger",
                     LastName = "Federer",
