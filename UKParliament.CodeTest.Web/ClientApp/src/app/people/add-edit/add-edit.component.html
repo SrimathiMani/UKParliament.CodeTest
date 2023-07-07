@@ -41,9 +41,10 @@
       <div class="col-7 mb-3">
         <label class="form-label">Gender</label>
         <select formControlName="gender" required class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
-          <option value="">Select Gender</option>
+          <!--<option value="">Select Gender</option>
           <option value="Male">Male</option>
-          <option value="Female">Female</option>
+          <option value="Female">Female</option>-->
+          <option *ngFor="let genderLi of genderList" [value]="genderLi.value">{{genderLi.name}}</option>
         </select>
         <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
           <div *ngIf="f.gender.errors.required">Gender is required</div>

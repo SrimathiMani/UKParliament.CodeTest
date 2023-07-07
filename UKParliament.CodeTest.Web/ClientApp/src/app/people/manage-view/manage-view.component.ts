@@ -3,7 +3,7 @@ import { first } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 
 import { PersonService } from '../../_services/person.service';
-import { Person } from '../../models/person-view-model';
+import { Person, Gender } from '../../models/person-view-model';
 import { Subject } from 'rxjs';
 import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 
@@ -17,6 +17,7 @@ export class ManageViewComponent implements OnInit {
 
   constructor(private personService: PersonService, private dialog: MatDialog) { }
   peopleList: Person[] = [];
+  genderList: any[] = [];
   changingValue: Subject<boolean> = new Subject();
 
   showAddEditForm: boolean = false;
@@ -26,7 +27,16 @@ export class ManageViewComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.GetGenderEnumValues();
     this.GetAllPeople();
+  }
+
+
+  GetGenderEnumValues() {
+    this.personService.getGenderValues()
+      .subscribe(genderList => {
+        this.genderList = genderList;
+      });
   }
 
 
@@ -35,6 +45,7 @@ export class ManageViewComponent implements OnInit {
       .pipe(first())
       .subscribe(peopleLi => {
         this.peopleList = peopleLi;
+        this.peopleList.forEach(x => x.gender == Gender.Male ? x.gender = "Male" : x.gender = "Female");
         this.changingValue.next(true);
       });
   }
@@ -47,8 +58,10 @@ export class ManageViewComponent implements OnInit {
   savePeople(data: any) {
     if (data.id) {
       //Edit Person
+      data.gender = data.gender == "1" ? Gender.Male : Gender.Female;
       return this.personService.update(data).subscribe(res => {
         let itemIndex = this.peopleList.findIndex(item => item.id == data.id);
+        data.gender == Gender.Male ? data.gender = "Male" : data.gender = "Female";
         this.peopleList[itemIndex] = data;
 
         //ngOnChanges does not detect changes in array - so create a new object
@@ -64,7 +77,9 @@ export class ManageViewComponent implements OnInit {
     }
     else {
       //Create Person
+      data.gender = data.gender == "1" ? Gender.Male : Gender.Female;
       return this.personService.create(data).subscribe(person => {
+        person.gender == Gender.Male ? person.gender = "Male" : person.gender = "Female";
         this.peopleList.push(person);
         this.peopleList = [...this.peopleList];
 

@@ -28,10 +28,10 @@ namespace UKParliament.CodeTest.Data
                     new Person
                     {
                         Title = "Mr",
-                        FirstName ="Dainel",
+                        FirstName ="Daniel",
                         LastName ="Craig",
                         DateOfBirth = DateOnly.Parse("12/5/2008"),
-                        Gender = "Male"
+                        Gender = GenderEnum.Male
                     },
                     new Person
                     {
@@ -39,7 +39,7 @@ namespace UKParliament.CodeTest.Data
                         FirstName = "William",
                         LastName = "Firth",
                         DateOfBirth = DateOnly.Parse("12/7/2009"),
-                        Gender = "Male"
+                        Gender = GenderEnum.Male
                     },
                     new Person
                     {
@@ -47,7 +47,7 @@ namespace UKParliament.CodeTest.Data
                         FirstName = "Hugh",
                         LastName = "Wilkinson",
                         DateOfBirth = DateOnly.Parse("12/11/2007"),
-                        Gender = "Male"
+                        Gender = GenderEnum.Male
                     },
                     new Person
                     {
@@ -55,7 +55,7 @@ namespace UKParliament.CodeTest.Data
                         FirstName = "Rachel",
                         LastName = "Ellis",
                         DateOfBirth = DateOnly.Parse("2/3/2006"),
-                        Gender = "Female"
+                        Gender = GenderEnum.Female
                     },
                     new Person
                     {
@@ -63,7 +63,7 @@ namespace UKParliament.CodeTest.Data
                         FirstName = "Roger",
                         LastName = "Federer",
                         DateOfBirth = DateOnly.Parse("25/12/2005"),
-                        Gender = "Female"
+                        Gender = GenderEnum.Female
                     },
                     new Person
                     {
@@ -71,7 +71,7 @@ namespace UKParliament.CodeTest.Data
                         FirstName ="Lilly",
                         LastName ="Townsend",
                         DateOfBirth = DateOnly.Parse("14/7/2018"),
-                        Gender = "Male"
+                        Gender = GenderEnum.Male
                     },
                     new Person
                     {
@@ -79,7 +79,7 @@ namespace UKParliament.CodeTest.Data
                         FirstName = "Lewis",
                         LastName = "Gallore",
                         DateOfBirth = DateOnly.Parse("12/7/1987"),
-                        Gender = "Male"
+                        Gender = GenderEnum.Male
                     },
                     new Person
                     {
@@ -87,7 +87,7 @@ namespace UKParliament.CodeTest.Data
                         FirstName = "Nathan",
                         LastName = "Sueppage",
                         DateOfBirth = DateOnly.Parse("12/11/1995"),
-                        Gender = "Male"
+                        Gender = GenderEnum.Male
                     },
                     new Person
                     {
@@ -95,7 +95,7 @@ namespace UKParliament.CodeTest.Data
                         FirstName = "Eddie",
                         LastName = "Corbett",
                         DateOfBirth = DateOnly.Parse("09/3/2008"),
-                        Gender = "Female"
+                        Gender = GenderEnum.Female
                     },
                     new Person
                     {
@@ -103,7 +103,7 @@ namespace UKParliament.CodeTest.Data
                         FirstName = "Rita",
                         LastName = "Mal",
                         DateOfBirth = DateOnly.Parse("25/09/2005"),
-                        Gender = "Female"
+                        Gender = GenderEnum.Female
                     }
                 };
                 context.People.AddRange(people);

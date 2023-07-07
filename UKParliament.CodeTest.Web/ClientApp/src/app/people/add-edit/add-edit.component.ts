@@ -21,6 +21,7 @@ export class AddEditComponent implements OnInit {
   maxdate: any = new Date().toLocaleDateString();
 
   @Input() id?: number = 0;
+  @Input() genderList: any[] = [];
   @Output() save = new EventEmitter<any>();
   @Output() cancel = new EventEmitter<any>();
 

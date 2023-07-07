@@ -54,5 +54,10 @@ namespace UKParliament.CodeTest.Services
                 dbContext.SaveChanges();
             }
         }
+
+        public List<EnumValue> GetGenderEnumValues()
+        {
+            return EnumExtensions.GetValues<GenderEnum>();
+        }
     }
 }

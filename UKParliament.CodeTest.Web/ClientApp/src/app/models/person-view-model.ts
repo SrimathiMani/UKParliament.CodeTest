@@ -8,5 +8,10 @@ export class Person {
   firstName?: string;
   lastName?: string;
   dateOfBirth?: Date;
-  gender?: string;
+  gender?: any;
+}
+
+export enum Gender {
+  Male = 1,
+  Female = 2
 }

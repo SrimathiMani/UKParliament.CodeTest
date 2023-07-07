@@ -33,6 +33,7 @@ export const PRColumns = [
   },
   {
     key: 'gender',
+    type: 'genderEnum',
     label: 'Gender',
   },
   {

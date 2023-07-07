@@ -23,7 +23,9 @@
               </button>
 
             </div>
-
+            <span *ngSwitchCase="'genderEnum'">
+              {{ element[col.key] }}
+            </span>
             <span *ngSwitchCase="'date'">
               {{ element[col.key] | date: 'dd/MM/yyyy'}}
             </span>

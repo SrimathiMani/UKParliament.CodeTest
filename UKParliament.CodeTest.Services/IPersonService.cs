@@ -16,5 +16,7 @@ namespace UKParliament.CodeTest.Services
         Person UpdatePeople(Person person);
 
         void DeletePeople(int personID);
+
+        List<EnumValue> GetGenderEnumValues();
     }
 }

@@ -102,5 +102,14 @@ namespace UKParliament.CodeTest.Web.Controllers
                 },
                 () => NotFound());
         }
+
+        [HttpGet]
+        [Route("GetGenderValues")]
+        public IActionResult GetGenderEnumValues()
+        {
+            return new ExceptionHandler().Execute<IActionResult>(MethodBase.GetCurrentMethod(),
+                () => Ok(_service.GetGenderEnumValues()),
+                () => NotFound());
+        }
     }
 }

@@ -35,5 +35,9 @@ import { Observable } from 'rxjs';
     delete(id: number) {
       return this.http.delete(`${this.baseUrlNew + "api/person"}/${id}`);
     }
+
+    getGenderValues(): Observable<any[]> {
+      return this.http.get<any[]>(`${this.baseUrlNew + "api/person"}/GetGenderValues`);
+    }
   }
 
