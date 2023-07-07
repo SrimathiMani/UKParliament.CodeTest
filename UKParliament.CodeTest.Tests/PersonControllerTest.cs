@@ -119,7 +119,7 @@ namespace UKParliament.CodeTest.Tests
                 FirstName = "testFirstName",
                 LastName = "testLastName",
                 DateOfBirth = DateOnly.Parse("13/7/2008"),
-                Gender = "Male"
+                Gender = GenderEnum.Male
             };
 
             //act
@@ -148,7 +148,7 @@ namespace UKParliament.CodeTest.Tests
                 //FirstName = "testFirstName",
                 LastName = "testLastName",
                 DateOfBirth = DateOnly.Parse("13/7/2008"),
-                Gender = "Male"
+                Gender = GenderEnum.Male
             };
 
             //act
@@ -178,7 +178,7 @@ namespace UKParliament.CodeTest.Tests
                 FirstName = "testing",
                 LastName = "Firth",
                 DateOfBirth = DateOnly.Parse("12/7/2009"),
-                Gender = "Male"
+                Gender = GenderEnum.Male,
             };
 
             _context.ChangeTracker.Clear();
@@ -248,7 +248,7 @@ namespace UKParliament.CodeTest.Tests
                     FirstName ="James",
                     LastName ="Braggs",
                     DateOfBirth = DateOnly.Parse("12/5/2008"),
-                    Gender = "Male"
+                    Gender = GenderEnum.Male
                 },
                 new Person
                 {
@@ -257,7 +257,7 @@ namespace UKParliament.CodeTest.Tests
                     FirstName = "William",
                     LastName = "Firth",
                     DateOfBirth = DateOnly.Parse("12/7/2009"),
-                    Gender = "Male"
+                    Gender = GenderEnum.Male
                 },
                 new Person
                 {
@@ -266,7 +266,7 @@ namespace UKParliament.CodeTest.Tests
                     FirstName = "Neal",
                     LastName = "Wilkinson",
                     DateOfBirth = DateOnly.Parse("12/11/2007"),
-                    Gender = "Male"
+                    Gender = GenderEnum.Male
                 },
                 new Person
                 {
@@ -275,7 +275,7 @@ namespace UKParliament.CodeTest.Tests
                     FirstName = "Sarah",
                     LastName = "Ellis",
                     DateOfBirth = DateOnly.Parse("2/3/2006"),
-                    Gender = "Female"
+                    Gender = GenderEnum.Female
                 },
                 new Person
                 {
@@ -284,7 +284,7 @@ namespace UKParliament.CodeTest.Tests
                     FirstName = "Roger",
                     LastName = "Federer",
                     DateOfBirth = DateOnly.Parse("25/12/2005"),
-                    Gender = "Female"
+                    Gender = GenderEnum.Female
                 }
             };
         }
